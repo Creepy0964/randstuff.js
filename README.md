@@ -8,7 +8,7 @@ Randstuff API on Node.JS using Axios.
 1. Put `randstuff.js` in your project folder
 2.
 ```js
-import { Randstuff } from './randstuff.js';s
+import { Randstuff } from './randstuff.js';
 const rnd = new Randstuff();
 rnd.get_random_joke().then((joke) => console.log(`Joke: ${joke["joke"]["text"]}`));
 ```
