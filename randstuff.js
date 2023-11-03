@@ -13,7 +13,7 @@ class Randstuff {
     async get_random_joke() {
         const resp = await axios({
             method: 'post',
-            url: `${this.api.link}/joke/generate`,
+            url: `${this.api.link}/joke/generate/`,
             headers: this.api.headers
         });  
         const joke = await resp.data; // returns "joke" object with 'id' and 'text' keys
@@ -23,7 +23,7 @@ class Randstuff {
     async get_random_fact() {
         const resp = await axios({
             method: 'post',
-            url: `${this.api.link}/fact/generate`,
+            url: `${this.api.link}/fact/generate/`,
             headers: this.api.headers
         });
         const fact = await resp.data; // returns "fact" object with 'id' and 'text' keys
@@ -39,24 +39,24 @@ class Randstuff {
             url: `${this.api.link}/ask/generate/`,
             headers: this.api.headers
         });
-        const ask = await resp.data; // returns "fact" object with 'id' and 'text' keys
+        const ask = await resp.data; // returns "ask" object with 'prediction' key
         return ask;
     }
 
     async get_random_wisdom() {
         const resp = await axios({
             method: 'post',
-            url: `${this.api.link}/saying/generate`,
+            url: `${this.api.link}/saying/generate/`,
             headers: this.api.headers
         });
-        const wisdom = await resp.data; // returns "fact" object with 'id' and 'text' keys
+        const wisdom = await resp.data; // returns "saying" object with 'id' and 'text' keys
         return wisdom;
     }
 
     async get_random_question() {
         const resp = await axios({
             method: 'post',
-            url: `${this.api.link}/question/generate`,
+            url: `${this.api.link}/question/generate/`,
             headers: this.api.headers
         });
         const question = await resp.data; // returns "question" object with 'id' and 'text' keys
@@ -73,7 +73,7 @@ class Randstuff {
             headers: this.api.headers,
             data: data.toString()
         });
-        const question = await resp.data; // returns "question" object with 'id' and 'text' keys
+        const question = await resp.data; // returns "city" object with... a lot of keys, refer to the docs :p
         return question;
     }
 
@@ -87,7 +87,7 @@ class Randstuff {
             headers: this.api.headers,
             data: data.toString()
         });
-        const nickname = await resp.data; // returns "question" object with 'id' and 'text' keys
+        const nickname = await resp.data; // returns "nickname" object with 'nickname' key
         return nickname;
     }
 
@@ -102,17 +102,17 @@ class Randstuff {
             headers: this.api.headers,
             data: data.toString()
         });
-        const answer = await resp.data; // returns "fact" object with 'id' and 'text' keys
+        const answer = await resp.data; // returns "answer" object with 'success' and 'correct' keys
         return answer;
     }
 
     async get_random_ticket() {
         const resp = await axios({
             method: 'post',
-            url: `${this.api.link}/ticket/generate`,
+            url: `${this.api.link}/ticket/generate/`,
             headers: this.api.headers
         });
-        const ticket = await resp.data; // returns "fact" object with 'id' and 'text' keys
+        const ticket = await resp.data; // returns "ticket" object with 'ticket' and 'lucky' keys
         return ticket;
     }
 
