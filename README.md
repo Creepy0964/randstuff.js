@@ -13,7 +13,3 @@ const rnd = new Randstuff();
 rnd.get_random_joke().then((joke) => console.log(`Joke: ${joke["joke"]["text"]}`));
 ```
 For more information about returnable objects and functions, refer to `randstuff.md`.
-
-## TODO
-- [ ] finish `randstuff.md`
-- [ ] clear `randstuff.js`
